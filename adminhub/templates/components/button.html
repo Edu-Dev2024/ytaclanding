@@ -1,0 +1,19 @@
+{% if url %}
+<a href="{{ url }}" class="{{ css_class }}{% if disabled %} disabled{% endif %}" target="{{ target }}">
+  {% if loading %}
+  <i class="fas fa-spinner fa-spin"></i>
+  {% elif icon %}
+  <i class="{{ icon }}"></i>
+  {% endif %}
+  {{ text }}
+</a>
+{% else %}
+<button type="{{ button_type }}" class="{{ css_class }}" {% if disabled %}disabled{% endif %}>
+  {% if loading %}
+  <i class="fas fa-spinner fa-spin"></i>
+  {% elif icon %}
+  <i class="{{ icon }}"></i>
+  {% endif %}
+  {{ text }}
+</button>
+{% endif %}

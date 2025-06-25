@@ -1,0 +1,12 @@
+{% extends "admin/index.html" %}
+
+{% block sidebar %}
+{{ block.super }}
+<div class="module">
+    <h2>Custom Actions</h2>
+    <ul>
+        <li><a href="{% url 'custom_admin:generate_invite_codes' %}">Generate Invite Codes</a></li>
+        <li><a href="{% url 'custom_admin:invite_code_list' %}">Invite Codes List</a></li>
+    </ul>
+</div>
+{% endblock %}

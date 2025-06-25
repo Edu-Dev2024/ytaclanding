@@ -1,0 +1,6 @@
+adminhub/.env
+*.pyc
+*.enc
+adminhub/django_errors.log
+django_errors.log
+venv/
