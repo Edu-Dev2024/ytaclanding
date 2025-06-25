@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: calc(100vh - 35px);
+  background: url('img/background3.jpeg') no-repeat center center fixed;
+  background-size: cover; /* Ensure the background image covers the entire body */
+}
+@media only screen and (max-width: 576px) {
+  body .bg-body {
+    width: 90% !important; 
+  }
+}
+
+.logo-container {
+  width: 150px;
+  height: 50px;
+}
+.logo-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.progress-bar .step p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  margin-top: 10px;
+}
+.progress-bar .step .bullet {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+}
+.progress-bar .arrow-icon {
+  min-width: 36px; /* Adjust size */
+  height: 36px; /* Adjust size */
+  transition: fill 0.3s ease; /* Smooth transition for color change */
+}
+.progress-bar .step.active p {
+  color: #e96363;
+  font-weight: 700;
+}
+.progress-bar .step.active .bullet {
+  color: #e96363;
+  border-color: #e96363;
+  transform: scale(1.3);
+  transition: all 0.3s;
+}
+
+.section-container {
+  max-height: 450px; /* Adjust height as needed */
+  overflow-y: auto;
+}
+@media only screen and (max-width: 576px) { 
+  .section-container {
+    max-height: 550px;
+    overflow-y: auto;
+  }
+}
+
+.d-inline-block {
+  width: 620px;
+}
+@media only screen and (max-width: 576px) { 
+  .d-inline-block {
+    width: auto;
+  }
+}
+
+.section-container  {
+  display: none;
+}
+.section-container .active {
+  display: block;
+}

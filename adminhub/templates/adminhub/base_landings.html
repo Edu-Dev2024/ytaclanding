@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
+        defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'adminhub/assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'adminhub/assets/css/landing_styles.css' %}">
+    <title>{% block title %}CodeKidz Eduwel{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href={% static "adminhub/landings/favicon.ico" %}>
+    <script type="text/javascript" src='{% static "adminhub/assets/js/landing.js" %}' defer></script>
+
+    <style>
+        .bg-hero {
+            background-image: url("/static/adminhub/landings/Tech Background@300x-8.png");
+        }
+
+        @media (min-width: 768px) {
+            .bg-hero {
+                background-image: url("/static/adminhub/landings/Desktop Tech Background @300x-8.png");
+            }
+        }
+
+        .bg-about {
+            background-image: url("/static/adminhub/landings/Mobile Background@300x-8.png");
+        }
+
+        @media (min-width: 768px) {
+            .bg-about {
+                background-image: url("/static/adminhub/landings/Desktop Background@300x-8.png");
+            }
+        }
+
+        .bg-achievement {
+            background-image: url("/static/adminhub/landings/Tech Background 1@300x-100.jpg");
+        }
+
+        @media (min-width: 768px) {
+            .bg-achievement {
+                background-image: url("/static/adminhub/landings/Desktop Tech Background 2@300x-100.jpg");
+            }
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="">
+    <div class="bg-hero bg-contain bg-no-repeat min-h-[100vh]">
+        <header class="sticky top-0 z-50">
+            <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-20 items-center justify-between">
+                    <div class="md:flex md:items-center md:gap-12">
+                        <a class="block text-zinc-200" href="#">
+                            <span class="sr-only">Home</span>
+                            <img src="{% static 'adminhub/landings/YTAC Logo 2025-2035.ai.png' %}" alt="CodeKidz Eduwel"
+                                class="bg-cover h-[48px] lg:h-[64px]">
+                        </a>
+                    </div>
+
+                    <div class="hidden md:block">
+                        <nav aria-label="Global" id="navbar">
+                            <ul class="flex items-center gap-10 text-md font-semibold">
+                                <li>
+                                    <a class="nav-link text-zinc-200 transition duration-200 hover:text-zinc-200/75"
+                                        href="#timeline">
+                                        History
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="nav-link text-zinc-200 transition duration-200 hover:text-zinc-200/75"
+                                        href="#about"> About Us
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="nav-link text-zinc-200 transition duration-200 hover:text-zinc-200/75"
+                                        href="#achievements">
+                                        Achievements
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="nav-link text-zinc-200 transition duration-200 hover:text-zinc-200/75"
+                                        href="#supporting">
+                                        Supporting & Endorsements
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="sm:flex sm:gap-4">
+                            <a
+                                class="cursor-pointer group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-rose-600/90 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-rose-600/50 border border-white/20">
+                                <span class="text-base lg:text-lg">I'm interested !</span>
+                                <div
+                                    class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
+                                    <div class="relative h-full w-10 bg-white/20"></div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="hidden">
+                            <button class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        </header>
+
+        <main class="text-zinc-700/90">
+
+            {% block content %}
+
+            {% endblock content %}
+
+        </main>
+    </div>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const links = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                links.forEach(link => {
+                    link.classList.remove('text-zinc-200');
+                    link.classList.add('text-zinc-800', 'hover:text-zinc-800/75');
+                });
+            } else {
+                links.forEach(link => {
+                    link.classList.remove('text-zinc-800', 'hover:text-zinc-800/75');
+                    link.classList.add('text-zinc-200', 'hover:text-zinc-200/75');
+                });
+            }
+        });
+    </script>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+
+</html>

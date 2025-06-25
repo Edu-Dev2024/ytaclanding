@@ -1,0 +1,198 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url("img/codekidz_learning_bg.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Comic Neue", "sans-serif";
+}
+@media only screen and (max-width: 576px) {
+  body {
+    background-size: 200% !important;
+  }
+}
+
+.login-wrapper {
+  flex-grow: 1; /* Allow content to grow and push footer down */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card {
+  width: 400px; /* Default width for desktop */
+  padding: 20px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Slightly transparent for readability */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.img-container {
+  margin-bottom: 20px;
+}
+
+img.logo {
+  width: 70%;
+}
+
+.validation-message {
+  color: #d9534f; /* A subtle red color for errors */
+  font-size: 14px;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  border-top: 1px solid #f2dede;
+  border-bottom: 1px solid #f2dede;
+  background-color: #f9eaea; /* Light background to make it stand out slightly */
+  text-align: center;
+  border-radius: 5px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  width: 100%; /* Full width for the input group */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center; /* Center-align the buttons horizontally */
+  width: 100%;
+  gap: 10px; /* Add a gap between buttons */
+}
+
+/* Specific styling for login page buttons if needed */
+.login-buttons .btn {
+  margin-right: 10px; /* Adds spacing between the buttons */
+}
+
+/* Remove any extra margin from the last button to keep it balanced */
+.login-buttons .btn:last-child {
+  margin-right: 0;
+}
+
+button.btn {
+  background-color: #57a773;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 45%;
+}
+
+button.btn:hover {
+  opacity: 0.9;
+}
+
+.extra-options {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.extra-options a {
+  color: #57a773;
+  text-decoration: none;
+}
+
+.extra-options a:hover {
+  text-decoration: underline;
+}
+
+/* Base styles for desktop */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+.footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent dark background */
+  color: #ffffff; /* White text color for better visibility */
+  text-align: center;
+  padding: 15px 0; /* Padding for better spacing */
+  font-family: Arial, sans-serif; /* Simple, readable font */
+  font-size: 16px; /* Larger font size for readability */
+  z-index: 1000; /* Ensure footer stays on top */
+  position: relative; /* Relative positioning */
+}
+
+/* Media query for tablets (screens 768px and wider) */
+@media screen and (max-width: 1024px) {
+  .login-card {
+    width: 300px; /* Slightly narrower width for tablets */
+    padding: 15px;
+  }
+
+  .footer {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 10px 0;
+  }
+}
+
+/* Media query for mobile devices (screens 767px and narrower) */
+@media screen and (max-width: 767px) {
+  .login-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .login-card {
+    width: 90%; /* Full width for mobile, with some margin */
+    max-width: 350px; /* Cap width at 350px */
+    padding: 10px;
+  }
+
+  .footer {
+    font-size: 12px; /* Smaller font size for small screens */
+    padding: 8px 0;
+  }
+
+  .img-container {
+    width: 100%; /* Logo full width on mobile */
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .img-container img {
+    width: 80%; /* Smaller logo for mobile */
+    max-width: 200px; /* Cap logo size */
+  }
+
+  .input-group,
+  .buttons {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+}

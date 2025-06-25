@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --bs-white-rgb: 255, 255, 255;
+  --bs-success-rgb: 25, 135, 84;
+  --bs-success-border-subtle: #a3cfbb;
+  --bs-border-width: 1px;
+  --bs-border-style: solid;
+  --bs-border-color: #dee2e6;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  background: url('img/background3.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  /* Ensure the background image covers the entire body */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body .bg-body {
+  /* height: 95vh;
+  max-height: 95svh;
+  overflow: hidden; */
+  min-height: 95vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+body .bg-body.invite {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  min-height: 100%;
+}
+
+@media only screen and (max-width: 576px) {
+  body .bg-body {
+    width: 90% !important;
+    height: 98svh;
+  }
+}
+
+.logo-container {
+  width: 120px;
+}
+
+.bg-green {
+  background-color: #6A9C89;
+
+}
+
+.border-green {
+  border-color: #6A9C89;
+}
+
+.bg-lightgreen {
+  background-color: #C1D8C3;
+
+}
+
+.border-lightgreen {
+  border-color: #C1D8C3;
+}
+
+.button-custom {
+  font-size: 18px;
+  color: #6A9C89;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.button-custom:focus,
+.button-custom:hover {
+  color: #6A9C89;
+}
+
+.button-custom:focus:after,
+.button-custom:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.button-custom:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #6A9C89;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.section-container {
+  overflow-y: auto;
+}
+
+.section-container .section-content {
+  display: none;
+}
+
+.section-container .section-content.active {
+  display: block;
+}
+
+.rounded-circle.active {
+  --bs-bg-opacity: 1;
+  --bs-text-opacity: 1;
+  background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+  color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+}
+
+.rounded-circle.inactive {
+  --bs-text-opacity: 0.5;
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  border-color: var(--bs-success-border-subtle) !important;
+  border-width: 1px !important;
+  color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important;
+  background-color: rgba(var(--bs-white-rgb), 1) !important;
+}
+
+.input-container {
+  position: relative;
+  margin: 20px 0 5px;
+  width: 100%;
+}
+
+.input-container input[type="text"],
+.input-container input[type="number"],
+.input-container select,
+.input-container input[type="date"],
+.input-container input[type="tel"] {
+  font-size: 16px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 5px 0;
+  background-color: transparent;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.input-container .label {
+  font-size: 16px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  color: #ccc;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-container input[type="text"]:focus~.label,
+.input-container input[type="text"]:valid~.label,
+.input-container input[type="number"]:focus~.label,
+.input-container input[type="number"]:valid~.label,
+.input-container select:focus~.label,
+.input-container select:valid~.label,
+.input-container input[type="date"]:focus~.label,
+.input-container input[type="date"]:valid~.label,
+.input-container input[type="tel"]:focus~.label,
+.input-container input[type="tel"]:valid~.label {
+  top: -20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.input-container input[type="text"]:focus~.underline,
+.input-container input[type="text"]:valid~.underline,
+.input-container input[type="number"]:focus~.underline,
+.input-container input[type="number"]:valid~.underline,
+.input-container select:focus~.underline,
+.input-container select:valid~.underline,
+.input-container input[type="date"]:focus~.underline,
+.input-container input[type="date"]:valid~.underline,
+.input-container input[type="tel"]:focus~.underline,
+.input-container input[type="tel"]:valid~.underline {
+  transform: scaleX(1);
+}
+
+/* Custom select styling */
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding-right: 30px;
+}
+
+.custom-select select::-ms-expand {
+  display: none;
+}
+
+.select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.select-box__icon {
+  width: 15px;
+  height: 20px;
+  transition: 0.2s ease;
+  opacity: 0.3;
+}
+
+.custom-select select:focus+.label+.underline+.select-arrow .select-box__icon {
+  transform: rotate(180deg);
+}
+
+/* Custom dropdown styling */
+.custom-select select option {
+  padding: 10px;
+  background-color: white;
+  color: #333;
+}
+
+/* Hide default date picker icon */
+.input-container input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: .3;
+}
+
+/* Custom styling for date input */
+.input-container input[type="date"] {
+  color: transparent;
+}
+
+.input-container input[type="date"]:focus,
+.input-container input[type="date"]:valid {
+  color: #333;
+}
+
+/* Dropdown styling */
+.custom-select select:focus {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.custom-select select option:hover,
+.custom-select select option:focus,
+.custom-select select option:active {
+  background-color: #f0f0f0;
+}
+
+/* add course button style */
+.add_button {
+  position: relative;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #34974d;
+  background-color: #3aa856;
+  border-radius: 10px;
+}
+
+.add_button,
+.add_button__icon,
+.add_button__text {
+  transition: all 0.3s;
+}
+
+.add_button .add_button__text {
+  transform: translateX(30px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.add_button .add_button__icon {
+  position: absolute;
+  transform: translateX(159px);
+  height: 100%;
+  width: 39px;
+  background-color: #34974d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.add_button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.add_button:hover {
+  background: #34974d;
+}
+
+.add_button:hover .add_button__text {
+  color: transparent;
+}
+
+.add_button:hover .add_button__icon {
+  width: 196px;
+  transform: translateX(0);
+}
+
+.add_button:active .add_button__icon {
+  background-color: #2e8644;
+}
+
+.add_button:active {
+  border: 1px solid #2e8644;
+}
+
+/* remove course button */
+.remove_button {
+  background-color: transparent;
+  position: relative;
+  border: none;
+}
+
+.remove_button::after {
+  content: 'delete';
+  position: absolute;
+  top: -130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(168, 7, 7);
+  padding: 4px 8px;
+  border-radius: 5px;
+  transition: .2s linear;
+  transition-delay: .2s;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.remove_button__icon {
+  transform: scale(1.2);
+  transition: .2s linear;
+}
+
+.remove_button:hover>.remove_button__icon {
+  transform: scale(1.5);
+}
+
+.remove_button:hover>.remove_button__icon path {
+  fill: rgb(168, 7, 7);
+}
+
+.remove_button:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: -160%;
+}
+
+
+/* receipt upload style */
+.drop-container {
+  position: relative;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px dashed rgb(171, 202, 255);
+  color: #444;
+  cursor: pointer;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.drop-container:hover {
+  background: rgba(0, 140, 255, 0.164);
+  border-color: rgba(17, 17, 17, 0.616);
+}
+
+.drop-container:hover .drop-title {
+  color: #222;
+}
+
+.drop-title {
+  transition: color .2s ease-in-out;
+}
+
+#file-input {
+  width: 350px;
+  max-width: 100%;
+  color: #444;
+  padding: 2px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(8, 8, 8, 0.288);
+}
+
+#file-input::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: rgba(var(--bs-success-rgb));
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+#file-input::file-selector-button:hover {
+  background: #40745f;
+}
+
+.buttons-group {
+  min-width: 48px;
+}
+
+.inputGroup {
+  margin: 1em 0 1em 0;
+  position: relative;
+}
+
+.inputGroup textarea {
+  font-size: 16px;
+  padding: 0.5em;
+  outline: none;
+  border: 2px solid #ccc;
+  background-color: transparent;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.inputGroup label {
+  position: absolute;
+  left: 0;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: #ccc;
+}
+
+.inputGroup :is(textarea:focus, textarea:valid)~label {
+  transform: translateY(-50%) scale(.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: white;
+  color: #333;
+}
+
+.inputGroup :is(textarea:focus, textarea:valid) {
+  border-color: #333;
+}
+
+/* input validation */
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.is-invalid~.label {
+  color: #dc3545 !important;
+}
+
+/* real time feedback validation */
+.error {
+  font-size: 0.9em;
+  margin-top: 3px;
+  color: red;
+}
